@@ -6,7 +6,7 @@
   <title>Ignitus — Activation. Ignition. Nexus.</title>
   <meta name="description" content="Ignitus is a performance-driven growth engine that activates audiences, ignites demand, and connects businesses to measurable results." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root { --lime:#ceee93; --dark:#0a0f1a; --card:#111827; --border:#1e2a3d; --muted:#6b7280; --text:#e5e7eb; }
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -105,6 +105,7 @@
     .calc-box h3 { font-size:1.5rem; margin-bottom:0.5rem; }
     .calc-box p.sub { color:var(--muted); font-size:0.9rem; margin-bottom:2rem; }
     .calc-kicker { display:flex; align-items:center; gap:8px; margin-bottom:8px; font-family:'Space Mono',monospace; font-size:0.7rem; color:var(--lime); letter-spacing:0.12em; text-transform:uppercase; }
+    .catch-call { font-family:'Caveat',cursive; font-weight:700; font-size:clamp(3rem,8vw,5.5rem); color:var(--lime); transform:rotate(-8deg); text-align:center; margin:1.5rem 0 2.5rem; line-height:1.1; }
     .calc-slider { margin-bottom:1.75rem; }
     .calc-slider label { display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.6rem; }
     .calc-slider label span:last-child { color:var(--lime); font-weight:700; }
@@ -281,10 +282,9 @@
 
   <!-- CALCULATOR -->
   <section class="calc-wrap" id="calculator">
+    <div class="catch-call reveal">Did you catch that call?</div>
     <div class="calc-box reveal">
-      <h3>Calculate Your Monthly Missed-Call Bleed</h3>
-      <div class="calc-kicker">Diagnostic Telemetry</div>
-      <p class="sub">Estimate how much revenue walks out your door every month when calls hit voicemail while your hands are full.</p>
+      <p class="sub">If you&rsquo;re missing calls, drag the sliders.</p>
       <div class="calc-slider">
         <label><span>Unanswered Calls Per Week</span><span id="callCountLabel">6 calls</span></label>
         <input type="range" id="callsSlider" min="1" max="30" value="6" oninput="updateBleed()">
