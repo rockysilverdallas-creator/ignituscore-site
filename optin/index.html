@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Opt In — Ignitus Core</title>
+<meta name="description" content="Opt in to Ignitus Core SMS updates. Consent-based messaging — what you agree to, plainly stated." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --lime:#ceee93; --dark:#0a0f1a; --panel:#0d1420; --border:#1e2a3d; --muted:#9ca3af; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--dark); color:#e5e7eb; font-family:'Inter',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+  .wrap { width:min(640px,92vw); margin:0 auto; padding:3.5rem 0 4rem; flex:1; }
+  .tag { font-family:'Space Mono',monospace; color:var(--lime); letter-spacing:0.25em; font-size:0.8rem; margin-bottom:1rem; }
+  h1 { font-size:clamp(1.8rem,4.5vw,2.6rem); font-weight:600; margin-bottom:0.75rem; }
+  .lede { color:var(--muted); margin-bottom:2rem; line-height:1.6; }
+  form { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:2rem; margin-bottom:2rem; }
+  label { display:block; font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.12em; color:var(--muted); margin:1.25rem 0 0.5rem; }
+  label:first-child { margin-top:0; }
+  input[type="text"], input[type="tel"] { width:100%; background:#0a0f1a; border:1px solid var(--border); border-radius:6px; color:#e5e7eb; padding:0.85rem 1rem; font-size:1rem; font-family:'Inter',sans-serif; }
+  input:focus { outline:none; border-color:var(--lime); }
+  .consent { display:flex; gap:0.85rem; margin-top:1.5rem; align-items:flex-start; }
+  .consent input { width:20px; height:20px; margin-top:0.2rem; accent-color:var(--lime); cursor:pointer; flex-shrink:0; }
+  .consent span { font-size:0.9rem; line-height:1.6; color:#d1d5db; }
+  button { margin-top:1.75rem; width:100%; background:var(--lime); color:#0a0f1a; border:none; border-radius:6px; padding:1rem; font-family:'Space Mono',monospace; font-weight:700; letter-spacing:0.15em; font-size:0.9rem; cursor:pointer; }
+  button:hover { filter:brightness(1.08); }
+  .disclosures { border:1px solid var(--border); border-radius:10px; padding:1.75rem; font-size:0.85rem; line-height:1.7; color:var(--muted); }
+  .disclosures h2 { font-family:'Space Mono',monospace; font-size:0.8rem; letter-spacing:0.2em; color:var(--lime); margin-bottom:1rem; }
+  .disclosures p { margin-bottom:0.9rem; }
+  .disclosures strong { color:#e5e7eb; }
+  .back { display:inline-block; margin-top:2.5rem; color:var(--lime); font-family:'Space Mono',monospace; font-size:0.8rem; letter-spacing:0.1em; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">[OPT_IN]</div>
+  <h1>Get Ignitus texts.</h1>
+  <p class="lede">Service updates and appointment alerts from Ignitus Core, straight to your phone. Nothing else. What you agree to is written below, plainly.</p>
+  <form action="/api/optin" method="POST">
+    <label for="fullName">FULL NAME</label>
+    <input type="text" id="fullName" name="fullName" required autocomplete="name" />
+    <label for="mobile">MOBILE NUMBER</label>
+    <input type="tel" id="mobile" name="mobile" required autocomplete="tel" />
+    <div class="consent">
+      <input type="checkbox" id="smsConsent" name="smsConsent" required />
+      <span>By checking this box, I consent to receive recurring automated SMS notifications, operational updates, and service alerts from <strong>Ignitus Core</strong> at the mobile number provided above. Message and data rates may apply. Message frequency varies. Reply <strong>STOP</strong> to unsubscribe, <strong>HELP</strong> for support.</span>
+    </div>
+    <button type="submit">OPT IN</button>
+  </form>
+  <div class="disclosures">
+    <h2>THE FINE PRINT</h2>
+    <p><strong>What you're signing up for:</strong> operational SMS from Ignitus Core — appointment confirmations, service updates, and scheduling alerts. Message frequency varies based on your engagement.</p>
+    <p><strong>Opt out anytime:</strong> reply STOP, CANCEL, END, UNSUBSCRIBE, or QUIT to end messages. Reply HELP for support, call <strong>(833) 345-4785</strong>, or email <strong>support@ignituscore.com</strong>.</p>
+    <p><strong>Your number stays yours:</strong> no mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with or sold to any third parties.</p>
+    <p><strong>Toll-free verification hotline:</strong> (833) 345-4785.</p>
+  </div>
+  <a class="back" href="/">&larr; BACK TO IGNITUS CORE</a>
+</div>
+</body>
+</html>

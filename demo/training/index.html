@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Ignitus Core — Loading Demo</title>
+<meta http-equiv="refresh" content="4;url=https://minner-performance.vercel.app" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --lime:#ceee93; --dark:#0a0f1a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; background:var(--dark); color:#e5e7eb; font-family:'Inter',sans-serif; overflow:hidden; }
+  .bg { position:fixed; inset:0; width:100%; height:100%; object-fit:cover; }
+  .shade { position:fixed; inset:0; background:rgba(10,15,26,0.74); }
+  .core { position:relative; z-index:2; min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+  .wordmark { font-family:'Space Mono',monospace; letter-spacing:0.35em; color:var(--lime); font-size:0.95rem; margin-bottom:1.25rem; }
+  h1 { font-size:clamp(1.6rem,4vw,2.6rem); font-weight:600; margin-bottom:0.75rem; }
+  .sub { color:#9ca3af; margin-bottom:1.5rem; }
+  .blueprint { width:min(400px,78vw); border:1px solid #1e2a3d; border-radius:8px; margin-bottom:1.5rem; }
+  .bar { width:min(320px,70vw); height:3px; background:#1e2a3d; border-radius:2px; overflow:hidden; margin-bottom:1.5rem; }
+  .bar i { display:block; height:100%; width:40%; background:var(--lime); border-radius:2px; animation:slide 1.2s infinite ease-in-out; }
+  @keyframes slide { 0%{margin-left:-40%;} 100%{margin-left:100%;} }
+  .skip { color:var(--lime); font-family:'Space Mono',monospace; font-size:0.8rem; letter-spacing:0.1em; text-decoration:none; border:1px solid #1e2a3d; padding:0.7rem 1.6rem; border-radius:4px; }
+  .skip:hover { border-color:var(--lime); }
+</style>
+</head>
+<body>
+<video class="bg" src="/videos/ignition_particles.mp4" autoplay muted loop playsinline></video>
+<div class="shade"></div>
+<div class="core">
+  <div class="wordmark">IGNITUS&nbsp;CORE</div>
+  <h1>Training Studio</h1>
+  <p class="sub">A concept build by Ignitus Core &mdash; taking you to the live demo.</p>
+  <img class="blueprint" src="/videos/passive_to_active.jpg" alt="From passive archives to active systems" />
+  <div class="bar"><i></i></div>
+  <a class="skip" href="https://minner-performance.vercel.app">ENTER DEMO &rarr;</a>
+</div>
+<script>setTimeout(function(){ window.location.href = "https://minner-performance.vercel.app"; }, 4000);</script>
+</body>
+</html>
